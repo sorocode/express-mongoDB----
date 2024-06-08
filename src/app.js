@@ -6,10 +6,7 @@ require("dotenv").config();
 const app = express();
 let database;
 
-mongoose.connect(process.env.DB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.DB_URI);
 database = mongoose.connection;
 database.on("connected", () => {
   console.log("db connected");
