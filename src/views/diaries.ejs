@@ -5,5 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>일기 목록</title>
   </head>
-  <body></body>
+  <body>
+    <ul style="display: flex; gap: 15px">
+      <% for(let diary of diaries){%>
+      <li
+        style="
+          display: flex;
+          flex-direction: column;
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px 20px;
+          width: 30%;
+        "
+      >
+        <a href="/diaries/<%=diary._id%>" style="text-decoration: none">
+          <img
+            src="<%=diary.image%>"
+            alt="<%= diary.image%>"
+            width="80%"
+            style="height: 20em"
+          />
+          <p style="font-weight: bold; font-size: 30px; color: black">
+            <%= diary.title %>
+          </p>
+          <span style="font-size: 20px; color: black"><%= diary.body %></span>
+        </a>
+      </li>
+      <%}%>
+    </ul>
+  </body>
 </html>

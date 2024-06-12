@@ -7,9 +7,10 @@
   </head>
 
   <body>
-    <form action="/diary" method="post">
+    <form action="/diary" method="post" enctype="multipart/form-data">
       <p><input type="text" name="title" id="title" placeholder="title" /></p>
       <p><textarea name="body" id="body" placeholder="일기내용"></textarea></p>
+      <p><input type="file" name="image" id="image" /></p>
       <button>submit</button>
     </form>
   </body>
